@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConentRoutingModule } from './conent-routing.module';
 import { ClientFormComponent } from './client-form/client-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ClientFormComponent } from './client-form/client-form.component';
   ],
   imports: [
     CommonModule,
-    ConentRoutingModule
+    ConentRoutingModule,
+    FormsModule
   ],
   exports: [
     ClientFormComponent

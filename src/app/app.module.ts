@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ConentModule } from './conent/conent.module';
+import { RouterModule } from '@angular/router';
+import { TemplateModule } from './template/template.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
-import { RouterModule } from '@angular/router';
+import { ClientesService } from './clientes.service';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,16 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     TemplateModule,
     RouterModule,
     ConentModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ClientesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
