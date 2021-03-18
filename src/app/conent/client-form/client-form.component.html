@@ -5,25 +5,25 @@
     </ol>
 </div>
 <div class="container">
-    <form action="">
+    <form #formCliente="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-6">
-                <label for="" class="form-label">ID:</label>
-                <input type="text" disabled="true" class="form-control">
+                <label for="id" class="form-label">ID:</label>
+                <input type="text" disabled="true" name="id" class="form-control">
             </div>
             <div class="col-md-6">
-                <label for="" class="form-label">Data Cadastro:</label>
-                <input type="text" disabled="true" class="form-control">
+                <label for="dataCadastro" class="form-label">Data Cadastro:</label>
+                <input type="text" disabled="true" name="dataCadastro" class="form-control">
             </div>
         </div>
         <div class="row" style="margin-top: 16px;">
             <div class="col-md-6">
-                <label for="" class="form-label">Nome:*</label>
-                <input type="text" class="form-control">
+                <label for="nome" class="form-label">Nome:*</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome">
             </div>
             <div class="col-md-6">
-                <label for="" class="form-label">CPF:</label>
-                <input type="text" class="form-control">
+                <label for="cpf" class="form-label">CPF:</label>
+                <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
             </div>
         </div>
         <div class="row" style="margin-top: 16px;">
