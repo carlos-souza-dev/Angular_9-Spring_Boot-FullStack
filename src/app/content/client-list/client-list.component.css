@@ -1,0 +1,38 @@
+.row {
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.ul-table {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.ul-table .content, .ul-table .col{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.ul-table .content {
+    font-weight: lighter;
+}
+.ul-table .btn-outline-primary {
+    color: #0d6efd;
+}
+
+.ul-table .btn-outline-primary:hover {
+    color: #ffff;
+}
+
+.ul-table .btn-outline-danger {
+    color: #dc3545;
+}
+
+.ul-table .btn-outline-danger:hover {
+    color: #ffff;
+}
