@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ConentRoutingModule } from './conent-routing.module';
-import { ClientFormComponent } from './client-form/client-form.component';
 import { FormsModule } from '@angular/forms';
+import { ConentRoutingModule } from './content-routing.module';
+
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientListComponent } from './client-list/client-list.component'
 
 
 @NgModule({
   declarations: [
-    ClientFormComponent
+    ClientFormComponent,
+    ClientListComponent
   ],
   imports: [
     CommonModule,

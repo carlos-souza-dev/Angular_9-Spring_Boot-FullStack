@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { ConentModule } from './conent/conent.module';
+import { ConentModule } from './content/conent.module';
 import { RouterModule } from '@angular/router';
 import { TemplateModule } from './template/template.module';
 import { HttpClientModule } from '@angular/common/http';
