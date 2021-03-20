@@ -8,26 +8,26 @@
 <div class="container">
     <div class="row">
         <ul class="table thead th ul-table">
-            <li class="col">#</li>
-            <li class="col">First</li>
-            <li class="col">Last</li>
-            <li class="col">Handle</li>
-            <li class="col">Atualizar</li>
-            <li class="col">Exluir</li>
+            <li class="col-1 title">Id</li>
+            <li class="col-4 title">Nome</li>
+            <li class="col-3 title">CPF</li>
+            <li class="col-2 title">Dada Cadastro</li>
+            <li class="col-1 title">Atualizar</li>
+            <li class="col-1 title">Exluir</li>
         </ul>
-        <ul class="table thead th ul-table">
-            <li class="col content">1</li>
-            <li class="col content">Mark</li>
-            <li class="col content">Otto</li>
-            <li class="col content">@mdo</li>
-            <li class="col content">
+        <ul class="table thead th ul-table" *ngFor="let cliente of clientes">
+            <li class="col-1 content">{{ cliente.id }}</li>
+            <li class="col-4 content">{{ cliente.nome }}</li>
+            <li class="col-3 content">{{ cliente.cpf }}</li>
+            <li class="col-2 content">{{ cliente.dataCadastro }}</li>
+            <li class="col-1 content">
                 <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-primary">Atualizar</a>
+                    <a type="button" class="btn btn-outline-primary"><i class="fa fa-edit"></i></a>
                   </div>
             </li>
-            <li class="col content">
+            <li class="col-1 content">
                 <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-danger">Excluir</a>
+                    <a type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
                   </div>
             </li>
         </ul>

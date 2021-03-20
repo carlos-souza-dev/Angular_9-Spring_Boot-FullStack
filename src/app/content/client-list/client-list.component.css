@@ -1,5 +1,5 @@
 .row {
-    margin-top: 3rem;
+    margin: 3rem 3rem 0 0;
     justify-content: center;
 }
 
@@ -9,10 +9,11 @@
     width: 100%;
     list-style: none;
     font-weight: bold;
-    margin-top: 16px;
+    margin: 16px auto 24px auto;
+    font-size: 15px;
 }
 
-.ul-table .content, .ul-table .col{
+.ul-table .content, .ul-table .title{
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -23,6 +24,7 @@
 }
 .ul-table .btn-outline-primary {
     color: #0d6efd;
+    font-size: 14px;
 }
 
 .ul-table .btn-outline-primary:hover {
@@ -30,6 +32,7 @@
 }
 
 .ul-table .btn-outline-danger {
+    font-size: 14px;
     color: #dc3545;
 }
 
