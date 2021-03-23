@@ -16,8 +16,8 @@ export class ClientesService {
     return this.http.post<Cliente>('http://localhost:8080/api/cliente/save', cliente);
   }
 
-  listarClientes(): Observable<any>{
-    return this.http.get<any>('http://localhost:8080/api/cliente/list');
+  listarClientes(): Observable<Cliente[]>{
+    return this.http.get<Cliente[]>('http://localhost:8080/api/cliente/list');
   }
 
 }

@@ -1,4 +1,4 @@
-.row {
+.row-two {
     margin: 3rem 3rem 0 0;
     justify-content: center;
 }
@@ -38,4 +38,19 @@
 
 .ul-table .btn-outline-danger:hover {
     color: #ffff;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+.modal .modal-dialog {
+    height: 100%;
+}
+
+.modal .modal-dialog .modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

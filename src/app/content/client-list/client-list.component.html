@@ -3,10 +3,16 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Bem vindo!</li>
     </ol>
-</div>
-
-<div class="container">
     <div class="row">
+      <div class="col-md-2">
+        <button class="btn btn-warning" routerLink="/cliente/save">
+          <i class="fa fa-plus"></i> Novo
+        </button>
+      </div>
+</div>
+</div>
+<div class="container">
+    <div class="row row-two">
         <ul class="table thead th ul-table">
             <li class="col-1 title">Id</li>
             <li class="col-4 title">Nome</li>
@@ -15,7 +21,7 @@
             <li class="col-1 title">Atualizar</li>
             <li class="col-1 title">Exluir</li>
         </ul>
-        <ul class="table thead th ul-table" *ngFor="let cliente of clientes">
+        <ul class="table thead th ul-table table-houver" *ngFor="let cliente of clientes">
             <li class="col-1 content">{{ cliente.id }}</li>
             <li class="col-4 content">{{ cliente.nome }}</li>
             <li class="col-3 content">{{ cliente.cpf }}</li>
@@ -27,9 +33,27 @@
             </li>
             <li class="col-1 content">
                 <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+                    <a type="button" class="btn btn-outline-danger" (click)="deletarCliente( cliente.id )"><i class="fa fa-trash"></i></a>
                   </div>
             </li>
         </ul>
     </div>
+</div>
+
+<div class="modal" style="" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir cliente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Tem certeza?.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Cancelar</button>
+        <button type="button" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
 </div>
