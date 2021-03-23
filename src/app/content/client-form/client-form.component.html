@@ -7,29 +7,51 @@
 <div class="container">
     <form #formCliente="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
-            <div class="col-md-6">
-                <label for="id" class="form-label">ID:</label>
-                <input type="text" disabled="true" name="id" class="form-control">
-            </div>
-            <div class="col-md-6">
-                <label for="dataCadastro" class="form-label">Data Cadastro:</label>
-                <input type="text" disabled="true" name="dataCadastro" class="form-control">
-            </div>
-        </div>
-        <div class="row" style="margin-top: 16px;">
-            <div class="col-md-6">
-                <label for="nome" class="form-label">Nome:*</label>
-                <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome">
-            </div>
-            <div class="col-md-6">
-                <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="sucesso == true && cliente.nome != ''">
+                    O cliente <span  class="alert-link">{{ cliente.nome }}</span> foi cadastrado com sucesso.
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="erros != null">
+                    Ocorreu o erro <span href="#" class="alert-link">{{ erros }}</span>.
+                </div>
             </div>
         </div>
-        <div class="row" style="margin-top: 16px;">
-            <div class="col-md-4">
+        <div class="row" *ngIf="cliente.id">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id" class="form-label">ID:</label>
+                    <input type="text" disabled="true" name="id" class="form-control" [(ngModel)]="cliente.id" name="id">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dataCadastro" class="form-label">Data Cadastro:</label>
+                    <input type="text" disabled="true" name="dataCadastro" class="form-control" [(ngModel)]="cliente.dataCadastro" name="dataCadastro">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome:*</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="cpf" class="form-label">CPF:</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
                 <button class="btn btn-success">
                     <i class="fa fa-save"></i> Salvar
+                </button>
+
+                <button class="btn btn-danger" routerLink="/cliente/list">
+                    <i class="fa fa-arrow-alt-circle-left"></i> voltar
                 </button>
             </div>
         </div>
