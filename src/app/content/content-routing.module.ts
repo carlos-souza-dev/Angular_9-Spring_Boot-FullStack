@@ -10,6 +10,9 @@ const routes: Routes = [
   }, {
     path: "cliente/list",
     component: ClientListComponent
+  }, {
+    path: "cliente/update/:id",
+    component: ClientFormComponent
   }
 ];
 

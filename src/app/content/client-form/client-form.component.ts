@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router'
 import { ClientesService } from 'src/app/clientes.service';
 
 @Component({
@@ -13,11 +14,21 @@ export class ClientFormComponent implements OnInit {
   cliente: Cliente; 
   sucesso: boolean = false;
   erros: string;
+  id: number;
 
   constructor( 
-    private clientesService: ClientesService
+    private clientesService: ClientesService,
+    private router: ActivatedRoute
   ) { 
     this.cliente = new Cliente
+
+    this.router.params.subscribe(res => {
+      this.id = res.id;
+    })
+
+    this.clientesService.buscarCliente(this.id).subscribe(res => {
+      this.cliente = res;
+    })
   }
 
   ngOnInit(): void {
