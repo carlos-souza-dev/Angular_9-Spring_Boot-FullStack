@@ -8,11 +8,11 @@
     <form #formCliente="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-12">
-                <div class="alert alert-success" role="alert" *ngIf="sucesso == true && cliente.nome != ''">
-                    O cliente <span  class="alert-link">{{ cliente.nome }}</span> foi cadastrado com sucesso.
+                <div class="alert alert-success" role="alert" *ngIf="status !== null && cliente.nome != ''">
+                    O cliente <span  class="alert-link">{{ cliente.nome }}</span> foi {{ status }} com sucesso.
                 </div>
-                <div class="alert alert-danger" role="alert" *ngIf="erros != null">
-                    Ocorreu o erro <span href="#" class="alert-link">{{ erros }}</span>.
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of erros">
+                    Ocorreu o erro <span href="#" class="alert-link">{{ erro.defaultMessage }}</span>.
                 </div>
             </div>
         </div>
@@ -50,11 +50,11 @@
                     <i class="fa fa-save"></i> Salvar
                 </button>
 
-                <a *ngIf="cliente.id && !sucesso || !cliente.id && !sucesso" class="btn btn-danger" routerLink="{{ rota }}">
+                <a *ngIf="cliente.id && !status || !cliente.id && !status" class="btn btn-danger" routerLink="{{ rota }}">
                     <i class="fa fa-arrow-alt-circle-left"></i> voltar
                 </a>
 
-                <a *ngIf="cliente.id && sucesso" class="btn btn-primary" routerLink="/home">
+                <a *ngIf="cliente.id && status" class="btn btn-primary" routerLink="/home">
                     <i class="fa fa-home"></i> Home
                 </a>
             </div>

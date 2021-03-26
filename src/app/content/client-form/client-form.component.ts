@@ -12,8 +12,8 @@ import { ClientesService } from 'src/app/clientes.service';
 export class ClientFormComponent implements OnInit {
 
   cliente: Cliente; 
-  sucesso: boolean = false;
-  erros: string;
+  status: string = null;
+  erros: String[] = [];
   id: number;
   rota: string;
 
@@ -34,21 +34,34 @@ export class ClientFormComponent implements OnInit {
     }
 
     this.rota = this.clientesService.getRotas();
-    console.log("Rota", this.rota)
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    this.clientesService.salvarCliente(this.cliente).subscribe(res => {
-      this.sucesso = true;
-      this.erros = null;
-      this.cliente = res;
-    }, HttpErrorResponse => {
-      this.sucesso = false;
-      this.erros = HttpErrorResponse.error.error;
-    });
+    if(this.id) {
+      console.log("TEste", this.id)
+       this.clientesService.atualizarCliente(this.id, this.cliente).subscribe(res => {
+        this.status = 'Atualizado';
+        this.erros = null;
+      }, HttpErrorResponse => {
+        this.status = null;
+        this.erros = HttpErrorResponse.error.errors;
+      }); 
+
+    } else {
+
+      this.clientesService.salvarCliente(this.cliente).subscribe(res => {
+        this.status = 'Cadastrado';
+        this.erros = null;
+        this.cliente = res;
+      }, HttpErrorResponse => {
+        this.status = null;
+        this.erros = HttpErrorResponse.error.errors;
+      });
+    
+    }
   }
 
 }
