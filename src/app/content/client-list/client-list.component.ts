@@ -11,11 +11,16 @@ export class ClientListComponent implements OnInit {
 
   clientes: Cliente[] = [];
   item: number;
+  dadosDeletar: Cliente;
 
   constructor(private clientesService: ClientesService) { }
 
   ngOnInit(): void {
     this.listarClientes();
+  }
+
+  setRoute(rota: string){
+    this.clientesService.setRotas(rota);
   }
 
   listarClientes(){
@@ -24,20 +29,16 @@ export class ClientListComponent implements OnInit {
     })
   }
 
-  atualizarCliente(id: number){
-
+  deletar(cliente: Cliente){
+    this.dadosDeletar = cliente;
   }
 
-  deletar(id: number){
-    this.item = id;
-  }
-
-  deletarCliente(id: String){
-      console.log("Numbero",id);
-  }
-
-  setRoute(rota: string){
-    this.clientesService.setRotas(rota);
+  deletarCliente(id: number){
+    this.clientesService.deletarCliente(id).subscribe( res => { 
+      this.ngOnInit();
+    }, erros => {
+      console.log("erro", erros)
+    })
   }
 
 }

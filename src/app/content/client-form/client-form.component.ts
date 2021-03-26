@@ -41,7 +41,6 @@ export class ClientFormComponent implements OnInit {
 
   onSubmit(){
     if(this.id) {
-      console.log("TEste", this.id)
        this.clientesService.atualizarCliente(this.id, this.cliente).subscribe(res => {
         this.status = 'Atualizado';
         this.erros = null;

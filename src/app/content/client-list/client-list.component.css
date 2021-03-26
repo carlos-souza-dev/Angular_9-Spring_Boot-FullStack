@@ -44,13 +44,7 @@
     background-color: rgba(0, 0, 0, 0.486);
 }
 
-.modal .modal-dialog {
-    height: 100%;
-}
-
-.modal .modal-dialog .modal-content {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.modal .modal-body span {
+    color: rgb(2, 36, 44);
+    font-weight: 600;
 }
