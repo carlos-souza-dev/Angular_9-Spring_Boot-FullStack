@@ -5,13 +5,13 @@ import { ClientListComponent } from './client-list/client-list.component';
 
 const routes: Routes = [
   {
-    path: "cliente/save",
+    path: "cliente/salvar",
     component: ClientFormComponent
   }, {
-    path: "cliente/list",
+    path: "cliente/listar",
     component: ClientListComponent
   }, {
-    path: "cliente/update/:id",
+    path: "cliente/atualizar/:id",
     component: ClientFormComponent
   }
 ];

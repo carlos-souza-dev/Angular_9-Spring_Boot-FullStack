@@ -1,11 +1,11 @@
 <div class="container-fluid">
-    <h1 class="mt-4">Home</h1>
+    <h1 class="mt-4">Lista</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Bem vindo!</li>
     </ol>
     <div class="row">
       <div class="col-md-2">
-        <button class="btn btn-warning" routerLink="/cliente/save">
+        <button class="btn btn-warning" routerLink="/cliente/salvar">
           <i class="fa fa-plus"></i> Novo
         </button>
       </div>
@@ -28,7 +28,7 @@
             <li class="col-2 content">{{ cliente.dataCadastro }}</li>
             <li class="col-1 content">
                 <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-primary" routerLink="/cliente/update/{{ cliente.id }}"><i class="fa fa-edit"></i></a>
+                    <a type="button" class="btn btn-outline-primary" (click)="setRoute('/cliente/listar')" routerLink="/cliente/atualizar/{{ cliente.id }}"><i class="fa fa-edit"></i></a>
                   </div>
             </li>
             <li class="col-1 content">

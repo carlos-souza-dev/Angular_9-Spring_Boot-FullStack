@@ -36,4 +36,8 @@ export class ClientListComponent implements OnInit {
       console.log("Numbero",id);
   }
 
+  setRoute(rota: string){
+    this.clientesService.setRotas(rota);
+  }
+
 }

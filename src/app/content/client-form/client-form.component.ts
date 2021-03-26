@@ -15,6 +15,7 @@ export class ClientFormComponent implements OnInit {
   sucesso: boolean = false;
   erros: string;
   id: number;
+  rota: string;
 
   constructor( 
     private clientesService: ClientesService,
@@ -26,9 +27,14 @@ export class ClientFormComponent implements OnInit {
       this.id = res.id;
     })
 
-    this.clientesService.buscarCliente(this.id).subscribe(res => {
-      this.cliente = res;
-    })
+    if(this.id){
+      this.clientesService.buscarCliente(this.id).subscribe(res => {
+        this.cliente = res;
+      })
+    }
+
+    this.rota = this.clientesService.getRotas();
+    console.log("Rota", this.rota)
   }
 
   ngOnInit(): void {

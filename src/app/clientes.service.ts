@@ -8,9 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class ClientesService {
 
+  rota: string = "/home";
+
   constructor( 
     private http: HttpClient
   ) { }
+
+  getRotas(){
+    return this.rota;
+  }
+
+  setRotas(rota: string){
+    this.rota = rota;
+  }
 
   salvarCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>('http://localhost:8080/api/cliente/save', cliente);
