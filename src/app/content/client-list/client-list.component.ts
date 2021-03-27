@@ -17,7 +17,6 @@ export class ClientListComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarClientes();
-    console.log("Tamanho", this.clientes.length)
   }
 
   setRoute(rota: string){

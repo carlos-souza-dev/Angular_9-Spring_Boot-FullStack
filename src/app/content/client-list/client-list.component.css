@@ -7,41 +7,8 @@
     width: 100%;
 }
 
-.ul-table {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-    font-weight: bold;
-    margin: 16px auto 24px auto;
-    font-size: 15px;
-}
-
-.ul-table .content, .ul-table .title{
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-.ul-table .content {
-    font-weight: lighter;
-}
-.ul-table .btn-outline-primary {
-    color: #0d6efd;
-    font-size: 14px;
-}
-
-.ul-table .btn-outline-primary:hover {
-    color: #ffff;
-}
-
-.ul-table .btn-outline-danger {
-    font-size: 14px;
-    color: #dc3545;
-}
-
-.ul-table .btn-outline-danger:hover {
-    color: #ffff;
+.tr-false {
+    text-align: center;
 }
 
 .modal {
