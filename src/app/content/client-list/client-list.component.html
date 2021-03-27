@@ -1,46 +1,61 @@
 <div class="container-fluid">
-    <h1 class="mt-4">Lista</h1>
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Bem vindo!</li>
-    </ol>
-    <div class="row">
-      <div class="col-md-2">
-        <button class="btn btn-warning" routerLink="/cliente/salvar">
-          <i class="fa fa-plus"></i> Novo
-        </button>
-      </div>
-</div>
+  <h1 class="mt-4">Lista</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Bem vindo!</li>
+  </ol>
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-warning" routerLink="/cliente/salvar">
+        <i class="fa fa-plus"></i> Novo
+      </button>
+    </div>
+  </div>
 </div>
 <div class="container">
-    <div class="row row-two">
-        <ul class="table thead th ul-table">
-            <li class="col-1 title">Id</li>
-            <li class="col-4 title">Nome</li>
-            <li class="col-3 title">CPF</li>
-            <li class="col-2 title">Dada Cadastro</li>
-            <li class="col-1 title">Atualizar</li>
-            <li class="col-1 title">Exluir</li>
-        </ul>
-        <ul class="table thead th ul-table table-houver" *ngFor="let cliente of clientes">
-            <li class="col-1 content">{{ cliente.id }}</li>
-            <li class="col-4 content">{{ cliente.nome }}</li>
-            <li class="col-3 content">{{ cliente.cpf }}</li>
-            <li class="col-2 content">{{ cliente.dataCadastro }}</li>
-            <li class="col-1 content">
-                <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-primary" (click)="setRoute('/cliente/listar')" routerLink="/cliente/atualizar/{{ cliente.id }}"><i class="fa fa-edit"></i></a>
-                  </div>
-            </li>
-            <li class="col-1 content">
-                <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
-                    <a type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal" (click)="deletar( cliente )"><i class="fa fa-trash"></i></a>
-                  </div>
-            </li>
-        </ul>
+  <div class="row row-two">
+    <ul class="table thead th ul-table">
+      <li class="col-1 title">Id</li>
+      <li class="col-4 title">Nome</li>
+      <li class="col-3 title">CPF</li>
+      <li class="col-2 title">Dada Cadastro</li>
+      <li class="col-1 title">Atualizar</li>
+      <li class="col-1 title">Exluir</li>
+    </ul>
+    <div class="content-true" *ngIf="clientes.length > 0">
+      <ul class="table thead th ul-table table-houver" *ngFor="let cliente of clientes">
+        <li class="col-1 content">{{ cliente.id }}</li>
+        <li class="col-4 content">{{ cliente.nome }}</li>
+        <li class="col-3 content">{{ cliente.cpf }}</li>
+        <li class="col-2 content">{{ cliente.dataCadastro }}</li>
+        <li class="col-1 content">
+          <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
+            <a type="button" class="btn btn-outline-primary" (click)="setRoute('/cliente/listar')"
+              routerLink="/cliente/atualizar/{{ cliente.id }}"><i class="fa fa-edit"></i></a>
+          </div>
+        </li>
+        <li class="col-1 content">
+          <div class="btn-group d-grid gap-2 d-md-block" role="group" aria-label="Basic mixed styles example">
+            <a type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"
+              (click)="deletar( cliente )"><i class="fa fa-trash"></i></a>
+          </div>
+        </li>
+      </ul>
     </div>
+    <div class="content-false" *ngIf="clientes.length == 0">
+      <ul class="table thead th ul-table table-houver">
+        <li class="col-1 content"> - </li>
+        <li class="col-4 content"> - </li>
+        <li class="col-3 content"> - </li>
+        <li class="col-2 content"> - </li>
+        <li class="col-1 content"> - </li>
+        <li class="col-1 content"> - </li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="dadosDeletar">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    *ngIf="dadosDeletar">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -52,7 +67,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deletarCliente( dadosDeletar.id )">Excluir</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"
+            (click)="deletarCliente( dadosDeletar.id )">Excluir</button>
         </div>
       </div>
     </div>

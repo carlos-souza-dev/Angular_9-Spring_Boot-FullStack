@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+.content-true, .content-false {
+    width: 100%;
+}
+
 .ul-table {
     display: flex;
     justify-content: space-between;
