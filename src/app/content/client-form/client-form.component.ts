@@ -42,7 +42,7 @@ export class ClientFormComponent implements OnInit {
   onSubmit(){
     if(this.id) {
        this.clientesService.atualizarCliente(this.id, this.cliente).subscribe(res => {
-        this.status = 'Atualizado';
+        this.status = 'atualizado';
         this.erros = null;
       }, HttpErrorResponse => {
         this.status = null;
@@ -52,7 +52,7 @@ export class ClientFormComponent implements OnInit {
     } else {
 
       this.clientesService.salvarCliente(this.cliente).subscribe(res => {
-        this.status = 'Cadastrado';
+        this.status = 'cadastrado';
         this.erros = null;
         this.cliente = res;
       }, HttpErrorResponse => {
